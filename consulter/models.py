@@ -12,6 +12,7 @@ class produit (models.Model):
     price = models.DecimalField(max_digits=10 , decimal_places= 2)
     stock = models.PositiveIntegerField(default=0)
     category = models.ForeignKey(category,on_delete=models.SET_NULL,null=True,related_name='consulter')
+    deals = models.BooleanField(default=False)
     image = models.ImageField(upload_to='media\consulter')
 
     def __str__(self):
